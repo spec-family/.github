@@ -1,0 +1,37 @@
+name: I tried it on my repository
+description: Say how a run went, whatever it found. It is the most useful issue there is.
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for trying it. Leave out anything your repository keeps private.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and version
+      description: For example `spec-graph 0.25.0`, as `--version` prints it.
+    validations:
+      required: true
+  - type: textarea
+    id: ran
+    attributes:
+      label: What you ran
+      description: The command, or the workflow step, and what kind of repository it ran on.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: What it printed, and its exit code. Trim what is long.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected, or what you would change
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: Operating system and Node version, for example `Windows 11, Node 24`.

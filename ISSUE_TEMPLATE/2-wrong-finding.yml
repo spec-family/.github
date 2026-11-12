@@ -1,0 +1,38 @@
+name: A finding that is wrong
+description: A finding that should not be there, or one that should be and is not.
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool and version
+      description: For example `spec-guard 0.34.0`, as `--version` prints it.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which way is it wrong?
+      options:
+        - It reports something that is fine (a false positive)
+        - It passes something it should report (a false negative)
+        - It reports the right thing in the wrong place or words
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: The smallest input that shows it
+      description: The Markdown, the code and the configuration it needs. A few lines are usually enough.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: The command and what it printed
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is wrong
