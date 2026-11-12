@@ -1,0 +1,20 @@
+name: The docs did not make sense
+description: A page, a README or a message that left you guessing.
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: The page's address, or the message as the tool printed it.
+    validations:
+      required: true
+  - type: textarea
+    id: unclear
+    attributes:
+      label: What was unclear, missing or wrong
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you were trying to do
